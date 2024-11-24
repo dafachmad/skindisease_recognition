@@ -5,11 +5,11 @@ from tensorflow.keras.preprocessing import image
 from PIL import Image
 
 # Load model
-model = tf.keras.models.load_model('final_project/model/skin_disease_model_mobilenet.h5')
+model = tf.keras.models.load_model('model/skin_disease_model_mobilenet.h5')
 
 # Load class labels
 try:
-    class_labels = np.load('final_project/model/sd_test.npy', allow_pickle=True).item()
+    class_labels = np.load('model/sd_test.npy', allow_pickle=True).item()
     if not isinstance(class_labels, dict):
         st.error("File 'sd_test.npy' tidak berisi dictionary. Periksa format file.")
         st.stop()
